@@ -10,3 +10,49 @@ When all of one player's ships have been hit the game finishes and the player wh
 #####Makers Academy Week 2 Project 
          Huy Le & Jack Rubio
 
+
+**Class Responsibility Collaborations**
+***************************************
+
+##class User
+
+| RESPONSIBILITIES       | COLLABORATORS  |
+|------------------------|----------------|
+| take turns to fire     |                |
+| place ships            | Ship, Grid     |
+|                        |                |
+
+##class Grid
+
+| RESPONSIBILITIES       | COLLABORATORS  |
+|------------------------|----------------|
+| create two grids       | Cell, ship     |
+
+##class Ship
+
+| RESPONSIBILITIES       | COLLABORATORS  |
+|------------------------|----------------|
+| knows when hit         | Cell           |
+| knows location         | Grid           |
+| knows when sunk        | Grid           |
+| knows its size         |                |
+
+##class Cell
+
+| RESPONSIBILITIES       | COLLABORATORS  |
+|------------------------|----------------|
+| knows if contains ship | Ship           |
+| shots (hit/miss)       | User/Grid/Ship |
+| Allow ship placement   | User/Grid/Ship |
+
+##class GameEngine
+
+| RESPONSIBILITIES       | COLLABORATORS  |
+|------------------------|----------------|
+| knows when ship hit    | Ship           |
+| create players         | User           |
+| knows when shot miss   | Grid           |
+| starts game            |                |
+| ends game              |                |
+| aware of ship count    |                |
+
