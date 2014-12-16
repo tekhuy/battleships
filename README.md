@@ -37,6 +37,13 @@ When all of one player's ships have been hit the game finishes and the player wh
 | knows when sunk        | Grid           |
 | knows its size         |                |
 
+##class Water
+
+| RESPONSIBILITIES       | COLLABORATORS  |
+|------------------------|----------------|
+| knows location         | Grid           |
+| knows its size         |                |
+
 ##class Cell
 
 | RESPONSIBILITIES       | COLLABORATORS  |
