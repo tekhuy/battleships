@@ -32,6 +32,4 @@ describe Ship do
     expect(sunk_ship).to be_sunk
   end
 
-  it 'should ' do
-  end
 end
