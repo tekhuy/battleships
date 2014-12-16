@@ -1,19 +1,24 @@
 class Ship
 
-  def initialize
-    @hit = false
-  end
-
-  def hit?
-    @hit
-  end
-
-  def hit!
-    @hit = true
+  def initialize(cells)
+    @cells = cells
   end
 
   def length
-   length = 3
+    length = []
   end
+
+  def hit?
+    @cells.any? { |cell| cell.hit? }
+  end
+
+  def length
+   @cells.length
+  end
+
+  def sunk?
+    @cells.all? { |cell| cell.hit? }
+  end
+
 
 end
