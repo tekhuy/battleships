@@ -4,10 +4,6 @@ class Ship
     @cells = cells
   end
 
-  def length
-    length = []
-  end
-
   def hit?
     @cells.any? { |cell| cell.hit? }
   end
