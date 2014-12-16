@@ -12,4 +12,8 @@ class Ship
     @hit = true
   end
 
+  def length
+   length = 3
+  end
+
 end

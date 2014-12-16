@@ -13,10 +13,8 @@ describe Ship do
     expect(ship.hit?).to eq true
   end
 
-  it 'should know its coordinates' do
-  end
-
-  it 'should know its length' do
+  it 'should know it\'s length upon creation' do
+    expect(ship.length).to eq (3)
   end
 
 end
