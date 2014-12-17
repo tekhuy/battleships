@@ -14,13 +14,17 @@ describe Cell do
     expect(cell.ship?).to eq false
   end
 
+   it 'should be able to contain a ship' do
+    expect(cell.ship?).to eq false
+    cell.ship!
+    expect(cell.ship?).to eq true
+    expect(cell.status).to eq "S"
+  end 
+
   it 'should be able to be hit' do
     
   end
 
-  it 'should be able to contain a ship' do
-    expect(cell.ship!).to eq "S"
-  end
 
   it 'should take ship and be able to be hit' do
     cell.ship!

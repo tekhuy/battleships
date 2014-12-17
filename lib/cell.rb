@@ -18,6 +18,7 @@ class Cell
   end
 
   def ship!
+    @ship = true
     @status = "S" # (S is ship in cell)
   end
 
