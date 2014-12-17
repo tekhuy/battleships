@@ -36,3 +36,18 @@ class Ship
   end
 
 end
+
+#EAMPLES OF CODE
+
+SUNK = Proc.new { |ship| ship.sunk? }
+
+def game_over?
+  @ships.all (&SUNK) 
+end
+  
+def floating_ships
+  @ships.reject (&SUNK)
+end
+
+
+

@@ -1,8 +1,10 @@
 class Cell
 
   def initialize 
-    @status
+    @status = contain_water
+    @contain_water = true
     @ship = false
+    @hit = false
   end
 
   def contain_water
@@ -13,8 +15,13 @@ class Cell
     @ship 
   end
 
+  def status
+    @status
+  end
+
   def hit!
-    @Status = "." # (. is empty cell is hit)
+    @hit = true
+    @status = "." # (. is empty cell is hit)
   end
 
   def ship!

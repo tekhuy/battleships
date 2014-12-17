@@ -15,21 +15,20 @@ describe Cell do
   end
 
    it 'should be able to contain a ship' do
-    expect(cell.ship?).to eq false
     cell.ship!
-    expect(cell.ship?).to eq true
     expect(cell.status).to eq "S"
   end 
 
-  it 'should be able to be hit' do
-    
+  it 'should be able to be hit when empty' do
+    cell.hit!
+    expect(cell.status).to eq "."
   end
 
 
-  it 'should take ship and be able to be hit' do
-    cell.ship!
-    expect(cell.hit!).to eq (".")
-  end
+  # it 'should take ship and be able to be hit' do
+  #   cell.ship!
+  #   expect(cell.hit!).to eq (".")
+  # end
 
 
   # it 'should know when it is hit' do
