@@ -19,20 +19,16 @@ describe Cell do
     expect(cell.status).to eq "S"
   end 
 
-  it 'should be able to be hit when empty' do
-    cell.hit!
+  it 'should be able to have miss status when empty' do
+    cell.miss!
     expect(cell.status).to eq "."
   end
 
 
-  # it 'should take ship and be able to be hit' do
-  #   cell.ship!
-  #   expect(cell.hit!).to eq (".")
-  # end
-
-
-  # it 'should know when it is hit' do
-  #   expect(cell.hit?).t
-  # end
+  it 'should take ship and be able to be hit' do
+    cell.ship!
+    cell.miss!
+    expect(cell.hit!).to eq "X"
+  end
 
 end

@@ -1,9 +1,12 @@
 class Cell
 
+  attr_reader :status
+
   def initialize 
     @status = contain_water
     @contain_water = true
     @ship = false
+    @miss = false
     @hit = false
   end
 
@@ -15,12 +18,8 @@ class Cell
     @ship 
   end
 
-  def status
-    @status
-  end
-
-  def hit!
-    @hit = true
+  def miss!
+    @miss = true
     @status = "." # (. is empty cell is hit)
   end
 
@@ -28,5 +27,10 @@ class Cell
     @ship = true
     @status = "S" # (S is ship in cell)
   end
+
+  def hit!
+    @hit = true
+    @status = "X"
+  end 
 
 end
