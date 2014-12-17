@@ -16,8 +16,4 @@ class Ship
     @cells.all? { |cell| cell.hit? }
   end
 
-  # def ship_size
-    
-  # end
-
 end
