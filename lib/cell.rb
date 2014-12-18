@@ -1,36 +1,21 @@
 class Cell
 
-  attr_reader :status
+  attr_accessor :status
 
   def initialize 
-    @status = contain_water
-    @contain_water = true
-    @ship = false
-    @miss = false
-    @hit = false
+    @status = "~" # ~ is water
   end
 
-  def contain_water
-    @status = "~" # (~ is water)
+  def status
+    @status
   end
 
-  def ship?
-    @ship 
+  def position_ship!
+    @status = "S" # S is ship
   end
 
-  def miss!
-    @miss = true
-    @status = "." # (. is empty cell is hit)
+  def receive_shot!
+    @status == "~" ? @status = "." : @status = "X" # . is hitting water, X is hitting ship
   end
-
-  def ship!
-    @ship = true
-    @status = "S" # (S is ship in cell)
-  end
-
-  def hit!
-    @hit = true
-    @status = "X"
-  end 
 
 end
