@@ -1,14 +1,12 @@
-require 'Water'
+require 'water'
 
 describe Water do
 
   let(:water) {Water.new}
 
-
-  it 'should be clear when created' do
-      expect(water.hit?).to eq false
+  it 'can be hit' do
+    water.hit!
+    expect(water).to be_hit
   end
 
-  
-  
 end
