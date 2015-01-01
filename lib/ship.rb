@@ -1,19 +1,50 @@
 class Ship
 
-  def initialize(cells)
-    @cells = cells
+  def initialize(size)
+    @size = size
+    @hits = 0
+    @hit = false
   end
 
-  def hit?
-    @cells.any? { |cell| cell.hit? }
+  def size
+    @size
   end
 
-  def length
-   @cells.length
+  def hit!
+    @hit = true
+    @hits += 1 
+  end
+
+  def hits
+    @hits
+  end
+
+  def floating?
+    !sunk?
   end
 
   def sunk?
-    @cells.all? { |cell| cell.hit? }
+    hits == size
+  end
+
+  def self.aircraft_carrier
+    new 5
+  end
+
+  def self.battleship
+    new 4
+  end
+
+  def self.destroyer
+    new 3
+  end
+
+  def self.submarine
+    new 3
+  end
+
+  def self.patrol_boat
+    new 2
   end
 
 end
