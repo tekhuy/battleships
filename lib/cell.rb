@@ -4,10 +4,15 @@ class Cell
 
   def initialize 
     @status = "~" # ~ is water
+    @hit = false
   end
 
   def status
     @status
+  end
+
+  def hit?
+    @hit
   end
 
   def position_ship!
@@ -15,6 +20,7 @@ class Cell
   end
 
   def receive_shot!
+    @hit = true
     @status == "~" ? @status = "." : @status = "X" # . is hitting water, X is hitting ship
   end
 

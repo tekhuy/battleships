@@ -10,12 +10,16 @@ describe Cell do
     expect(cell.status).to eq ("~")
   end
 
-   it 'should be able to contain a ship' do
+  it 'should not be hit when created' do
+    expect(cell.hit?).to eq false
+  end
+
+  it 'should be able to contain a ship' do
     cell.position_ship!
     expect(cell.status).to eq "S"
   end 
 
-  it 'should be able to have miss status when empty' do
+  it 'should be able to have miss status if shot at when empty' do
     cell.receive_shot!
     expect(cell.status).to eq "."
   end
@@ -24,6 +28,7 @@ describe Cell do
     cell.position_ship!
     cell.receive_shot!
     expect(cell.status).to eq "X"
+    expect(cell.hit?).to eq true
   end
 
 end
